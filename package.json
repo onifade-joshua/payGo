@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel ./src/index.html",
-    "build": "parcel ./src/index.js"
+    "build": "parcel build ./src/index.js",
+    "deploy": "yarn build && surge dist payGo.surge.sh"
   },
   "dependencies": {
     "@paypal/react-paypal-js": "^7.8.3",

@@ -1,0 +1,135 @@
+.item_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem; /* Spacing between items */
+}
+
+.item_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px; /* Set a fixed width */
+    margin: 1rem;
+    padding: 1rem;
+    border: #f8fcfd 5px solid;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.item_box:hover {
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styles */
+.img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Text alignment */
+h4, p {
+    text-align: center;
+}
+
+/* Payment box */
+.pay_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Ensure all cards are the same size */
+/* Ensure all cards are exactly the same size */
+.card {
+    width: 250px;  /* Fixed width */
+    height: 370px; /* Fixed height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Force all images to be the same size */
+.card-img-top {
+    width: 100%;  /* Full width */
+    height: 220px; /* Fixed height */
+    object-fit: cover; /* Ensures images fit without stretching */
+    border-radius: 10px 10px 0 0;
+}
+
+/* Text and button container */
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+/* Fix text alignment */
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Fix for Smaller Screens */
+@media (max-width: 768px) {
+    .card {
+        width: 90%; /* Adjust size for smaller screens */
+        height: 350px;
+    }
+
+    .card-img-top {
+        height: 200px; /* Slightly reduce image height */
+    }
+}
+
+
+
+/* Small screen adjustments */
+@media (max-width: 768px) {
+    .item_wrapper {
+        display: flex;
+        flex-wrap: nowrap; /* Prevent items from stacking */
+        overflow-x: auto; /* Allow horizontal scrolling */
+        scroll-snap-type: x mandatory; /* Smooth scrolling effect */
+    }
+
+    .item_box {
+        flex: 0 0 auto; /* Prevent item shrinking */
+        width: 80%; /* Adjust width to fit multiple items in a row */
+        margin-right: 1rem;
+        scroll-snap-align: start; /* Snap to each item */
+    }
+
+    .img {
+        max-width: 150px; /* Reduce image size on small screens */
+    }
+}
+
+/* Very small screens */
+@media only screen and (max-width: 350px) {
+    h4 {
+        font-size: 20px;
+    }
+}
